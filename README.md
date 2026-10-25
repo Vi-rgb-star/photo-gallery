@@ -1,16 +1,36 @@
-# React + Vite
+# Photo Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React app that shows photos from the Picsum Photos API. You can search by author name and mark photos as favourites.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Fetches 30 photos on load, with a loading spinner and an error message
+- Responsive grid: 4 columns on desktop, 2 on tablet, 1 on mobile
+- Real-time search by author name (filters the data already fetched)
+- Favourite photos with a heart button, saved in localStorage so they stay after a refresh
 
-## React Compiler
+## Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (Vite)
+- Tailwind CSS
+- Hooks: `useState`, `useEffect`, `useReducer`, `useMemo`, `useCallback`
+- Custom hook: `useFetchPhotos`
 
-## Expanding the ESLint configuration
+## Run It Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+git clone https://github.com/Vi-rgb-star/photo-gallery.git
+cd photo-gallery
+npm install
+npm run dev
+```
+
+Then open the link shown in the terminal ( http://localhost:5173).
+
+## Project Structure
+
+
+src/
+  components/ Gallery.jsx, PhotoCard.jsx
+  hooks/ useFetchPhotos.js
+  reducers/ favouritesReducer.js
